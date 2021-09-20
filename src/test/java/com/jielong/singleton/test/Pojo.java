@@ -7,7 +7,5 @@
  */
 package com.jielong.singleton.test;
 
-import com.jielong.singleton.container.ContainerSingleton;
-
 public class Pojo {
 }

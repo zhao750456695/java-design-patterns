@@ -7,13 +7,17 @@
  */
 package com.jielong.singleton.threadloacl;
 
-/**
- * @version: V1.0
- * @author: JieZhao
- * @className: ThreadLocalSingleton
- * @packageName: com.jielong.singleton.threadloacl
- * @description:
- * @data: 2021-09-20 9:40
- **/
 public class ThreadLocalSingleton {
+    private static final ThreadLocal<ThreadLocalSingleton> threadLocalInstance = new ThreadLocal<ThreadLocalSingleton>(){
+        @Override
+        protected ThreadLocalSingleton initialValue() {
+            return new ThreadLocalSingleton();
+        }
+    };
+
+    private ThreadLocalSingleton(){}
+
+    public static ThreadLocalSingleton getInstance(){
+        return threadLocalInstance.get();
+    }
 }
