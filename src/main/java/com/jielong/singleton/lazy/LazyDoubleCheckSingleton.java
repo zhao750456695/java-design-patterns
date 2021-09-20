@@ -1,7 +1,7 @@
 package com.jielong.singleton.lazy;
 
 public class LazyDoubleCheckSingleton {
-    private static LazyDoubleCheckSingleton instance;
+    private volatile static LazyDoubleCheckSingleton instance;
     private LazyDoubleCheckSingleton(){}
 
     public static LazyDoubleCheckSingleton getInstance(){
